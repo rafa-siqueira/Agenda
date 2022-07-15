@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -7,6 +8,10 @@ class Evento(models.Model):
     descricao = models.TextField(blank=True, null=True)
     data_evento = models.DateTimeField()
     data_criacao = models.DateTimeField(auto_now=True)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, db_column='id_usuario')
 
     class Meta:
         db_table = 'Evento'
+
+    def __str__(self):
+        return self.titulo

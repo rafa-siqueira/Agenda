@@ -1,5 +1,11 @@
 from django.contrib import admin
-from Agenda.core.models import Evento
+from core.models import Evento
+
 
 # Register your models here.
-admin.site.register(Evento)
+
+class EvetntoAdmin(admin.ModelAdmin):
+    list_display = ('titulo','data_evento','data_criacao')
+    list_filter = ('titulo','data_evento',)
+
+admin.site.register(Evento,EvetntoAdmin)
