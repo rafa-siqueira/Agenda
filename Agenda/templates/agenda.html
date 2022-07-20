@@ -1,0 +1,22 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+    <h2>Agendamentos</h2>
+    <a href="evento/">
+        <button style="padding: 6px;
+                            width: 120px;
+                            border-radius:10px;
+	                        background-color: rgb(0, 76, 120);
+                            color: rgb(255, 255, 255);
+                            border-style: solid;
+                            border-width: 3px;
+                            border-color: rgb(2, 162, 255);"
+                type="button">Novo Evento
+        </button>
+    </a>
+    <ul style="font size: 18px">
+        {% for evento in eventos %}
+            <li>{{ evento.titulo }} - {{ evento.get_data_evento }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
