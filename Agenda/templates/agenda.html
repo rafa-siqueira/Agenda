@@ -14,9 +14,12 @@
                 type="button">Novo Evento
         </button>
     </a>
-    <ul style="font size: 18px">
+    <ul style="...">
         {% for evento in eventos %}
-            <li>{{ evento.titulo }} - {{ evento.get_data_evento }}</li>
+            <li>
+                {{ evento.titulo }} - {{ evento.get_data_evento }}
+                  <a href="#">Editar</a> / <a href="evento/delete/{{ evento.id }}">Excluir</a>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}
