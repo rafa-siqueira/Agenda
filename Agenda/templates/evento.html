@@ -10,6 +10,7 @@
                     width: 130px;
                     float: center;">Título
     </label>
+    <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
     <br>
     <input style=" padding: 5px;
                     width: 300px;
@@ -17,7 +18,7 @@
                     border-style: solid;
                     border-width: 2px;
                     border-color: rgb(2, 162, 255);"
-           type="text" name="titulo" size="20">
+           type="text" name="titulo" size="20" value="{{ evento.titulo }}">
     <br>
     <label style=" color: #000000;
                     font-weight: bold;
@@ -31,7 +32,7 @@
                     border-style: solid;
                     border-width: 2px;
                     border-color: rgb(2, 162, 255);"
-           type="datetime-local" name="data_evento">
+           type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
     <br>
     <label style=" color: #000000;
                     font-weight: bold;
@@ -45,7 +46,7 @@
                     border-style: solid;
                     border-width: 2px;
                     border-color: rgb(2, 162, 255);"
-           type="text" name='local'>
+           type="text" name='local' value="{{ evento.local }}">
     <br>
     <label style=" color: #000000;
                     font-weight: bold;
@@ -59,7 +60,7 @@
                         border-style: solid;
                         border-width: 2px;
                         border-color: rgb(2, 162, 255);"
-              name="descricao" rows="5" cols="21">
+              name="descricao" rows="5" cols="21">{{ evento.descricao }}
 
     </textarea>
     <br><br>
