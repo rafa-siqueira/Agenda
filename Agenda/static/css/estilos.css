@@ -1,4 +1,6 @@
 body {
-    background-color: #ffcc69;
-    color: #000000;
+    background-image: url(../images/background-solid.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

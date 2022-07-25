@@ -2,89 +2,109 @@
 
 {% block content %}
 
-<h2>Evento</h2>
+<h2 style=" font-family:courier;
+            font-size:30px;
+            color:white;
+            font-weight;
+            text-transform: uppercase;">Evento</h2>
 
 <form action="submit" method="POST">{% csrf_token %}
-    <label style=" color: #000000;
+    <label style="  color: #ffffff;
                     font-weight: bold;
                     width: 130px;
                     float: center;">Título
     </label>
     <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
     <br>
-    <input style=" padding: 5px;
-                    width: 300px;
-                    border-radius:5px;
-                    border-style: solid;
-                    border-width: 2px;
-                    border-color: rgb(2, 162, 255);"
+    <input style=" color:white;
+                            padding: 5px;
+                            width: 300px;
+                            border-radius:10px;
+                            border-style: solid;
+                            border-width: 2px;
+                            background-color:gray;"
            type="text" name="titulo" size="20" value="{{ evento.titulo }}">
-    <br>
-    <label style=" color: #000000;
+    <br><br><br>
+    <label style="  color: #ffffff;
                     font-weight: bold;
                     width: 130px;
                     float: center;">Data do Evento
     </label>
     <br>
-    <input style=" padding: 5px;
-                    width: 300px;
-                    border-radius:5px;
-                    border-style: solid;
-                    border-width: 2px;
-                    border-color: rgb(2, 162, 255);"
+    <input style=" color:white;
+                            padding: 5px;
+                            width: 300px;
+                            border-radius:10px;
+                            border-style: solid;
+                            border-width: 2px;
+                            background-color:gray;"
            type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
-    <br>
-    <label style=" color: #000000;
+    <br><br><br>
+    <label style=" color: #ffffff;
                     font-weight: bold;
                     width: 130px;
                     float: center;">Local
     </label>
     <br>
-    <input style="padding: 5px;
-                    width: 300px;
-                    border-radius:5px;
-                    border-style: solid;
-                    border-width: 2px;
-                    border-color: rgb(2, 162, 255);"
+    <input style="color:white;
+                            padding: 5px;
+                            width: 300px;
+                            border-radius:10px;
+                            border-style: solid;
+                            border-width: 2px;
+                            background-color:gray;"
            type="text" name='local' value="{{ evento.local }}">
-    <br>
-    <label style=" color: #000000;
+    <br><br><br>
+    <label style=" color: #ffffff;
                     font-weight: bold;
                     width: 130px;
                     float: center;">Descrição
     </label>
     <br>
-    <textarea style=" padding: 5px;
-                        width: 300px;
-                        border-radius:5px;
-                        border-style: solid;
-                        border-width: 2px;
-                        border-color: rgb(2, 162, 255);"
+    <textarea style="color:white;
+                            padding: 5px;
+                            width: 300px;
+                            border-radius:10px;
+                            border-style: solid;
+                            border-width: 2px;
+                            background-color:gray;"
               name="descricao" rows="5" cols="21">{{ evento.descricao }}
 
     </textarea>
     <br><br>
-    <button style=" padding: 6px;
-                    width: 80px;
-                    border-radius:10px;
-                    background-color: rgb(0, 76, 120);
-                    color: rgb(255, 255, 255);
-                    border-style: solid;
-                    border-width: 3px;
-                    border-color: rgb(2, 162, 255);"
+    <button onclick="save()"
+            style="display: inline-block;
+                          padding: 5px 5px;
+                          width: 80px;
+                          font-size: 15px;
+                          cursor: pointer;
+                          text-align: center;
+                          text-decoration: none;
+                          outline: none;
+                          color: #fff;
+                          background-color: #4CAF50;
+                          border: none;
+                          border-radius: 15px;
+                          box-shadow: 10px 5px 5px black;"
             type="submit">Salvar
     </button>
     <a href="/">
-    <button style=" padding: 6px;
-                    width: 80px;
-                    border-radius:10px;
-                    background-color: rgb(0, 76, 120);
-                    color: rgb(255, 255, 255);
-                    border-style: solid;
-                    border-width: 3px;
-                    border-color: rgb(2, 162, 255);"
+    <button style="display: inline-block;
+                          padding: 5px 5px;
+                          width: 80px;
+                          font-size: 15px;
+                          cursor: pointer;
+                          text-align: center;
+                          text-decoration: none;
+                          outline: none;
+                          color: #fff;
+                          background-color: brown;
+                          border: none;
+                          border-radius: 15px;
+                          box-shadow: 10px 5px 5px black;"
                 type="button">Cancelar
         </button>
     </a>
 </form>
+<br><br><br><br><br><br>
 {% endblock %}

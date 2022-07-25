@@ -1,30 +1,66 @@
 {% extends "model-page.html" %}
 
 {% block content %}
-    <h2>Agendamentos</h2>
+    <h2 style="color: #ffffff; text-transform: uppercase;">Agendamentos</h2>
     <a href="evento/">
-        <button style="padding: 6px;
-                            width: 120px;
-                            border-radius:10px;
-	                        background-color: rgb(0, 76, 120);
-                            color: rgb(255, 255, 255);
-                            border-style: solid;
-                            border-width: 3px;
-                            border-color: rgb(2, 162, 255);"
+        <button style="display: inline-block;
+                          padding: 15px 15px;
+                          width: 150px;
+                          font-size: 15px;
+                          cursor: pointer;
+                          text-align: center;
+                          text-decoration: none;
+                          outline: none;
+                          color: #fff;
+                          background-color: #4CAF50;
+                          border: none;
+                          border-radius: 15px;
+                          box-shadow: 10px 5px 5px black;"
                 type="button">Novo Evento
         </button>
     </a>
     <ul style="...">
         {% for evento in eventos %}
             <li>
-                <div style= {% if evento.get_evento_atrasado %}
-                            "color:red"
+                <div style={% if evento.get_evento_atrasado %}
+                                "color:#ce1508s; font-family:courier; font-size:20px"
+                            {% else %}
+                                "color:#2ea30a; font-family:courier; font-size:20px"
                             {% endif %}>
                     {{ evento.titulo }} - {{ evento.get_data_evento }}
-                      <a href="evento/?id={{ evento.id }}">Editar</a>
-                    / <a href="evento/delete/{{ evento.id }}">Excluir</a>
+                      <a style="color:#cece16;display: inline-block;
+                          padding: 5px 5px;
+                          width: 80px;
+                          font-size: 15px;
+                          cursor: pointer;
+                          text-align: center;
+                          text-decoration: none;
+                          outline: none;
+                          color: #fff;
+                          background-color: #d1d100;
+                          border: none;
+                          border-radius: 15px;
+                          box-shadow: 10px 5px 5px black;"
+                         href="evento/?id={{ evento.id }}">Editar</a>
+
+                     <a onclick="del()"
+                        style="color:#e7281a;display: inline-block;
+                          padding: 5px 5px;
+                          width: 80px;
+                          font-size: 15px;
+                          cursor: pointer;
+                          text-align: center;
+                          text-decoration: none;
+                          outline: none;
+                          color: #fff;
+                          background-color: #FF0000;
+                          border: none;
+                          border-radius: 15px;
+                          box-shadow: 10px 5px 5px black;"
+                         href="evento/delete/{{ evento.id }}">Excluir</a>
                 </div>
             </li>
         {% endfor %}
     </ul>
+<br><br><br><br><br><br>
 {% endblock %}
