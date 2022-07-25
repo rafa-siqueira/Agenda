@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Agenda</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
     <div style=" border: 1px solid gray;
@@ -10,6 +12,7 @@
                  border-radius: 5px;"
          align="center">
         <h1>Agenda de Eventos</h1>
+        <img src="{% static 'images/marca_cuca.png' %}">
     </div>
     <form action="submit" method="POST">{% csrf_token %}
         <div align="center">
@@ -43,7 +46,7 @@
                    type="password"
                    name="password">
             <br><br>
-            <button style="	padding: 6px;
+            <button onclick="teste();" style="	padding: 6px;
                             width: 150px;
                             border-radius:10px;
 	                        background-color: rgb(0, 76, 120);
