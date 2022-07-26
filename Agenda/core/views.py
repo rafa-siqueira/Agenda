@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from core.models import Evento
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -91,3 +92,27 @@ def json_lista_evento(request):
 
 def teste(request):
     return render(request, 'teste.html')
+
+def cadastro(request):
+    id_usuario = request.GET.get('id')
+    dados = {}
+    if id_usuario:
+        dados['usuario'] = Evento.objects.get(usuario=id_usuario)
+    return render(request, 'cadastro.html', dados)
+
+def submit_cadastro(request):
+    if request.POST:
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        if username:
+            usuario = User.objects.get(username=username)
+            if usuario.username == username:
+                messages.error(request, "Usuário já existente, tente outro usuário.")
+            else:
+                usuario.username = username
+                usuario.password = password
+                usuario.save()
+                print(usuario.username)
+        else:
+            messages.error(request, "Necessário que seja informado um usuário e senha para o cadastro.")
+    return redirect('/')

@@ -7,5 +7,6 @@ function save(){
 }
 
 function del(){
+
     alert("Exclusão do evento com sucesso.")
 }

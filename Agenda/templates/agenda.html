@@ -22,41 +22,43 @@
     <ul style="...">
         {% for evento in eventos %}
             <li>
-                <div style={% if evento.get_evento_atrasado %}
+                <div style= {% if evento.get_evento_atrasado %}
                                 "color:#ce1508s; font-family:courier; font-size:20px"
                             {% else %}
                                 "color:#2ea30a; font-family:courier; font-size:20px"
                             {% endif %}>
-                    {{ evento.titulo }} - {{ evento.get_data_evento }}
-                      <a style="color:#cece16;display: inline-block;
-                          padding: 5px 5px;
-                          width: 80px;
-                          font-size: 15px;
-                          cursor: pointer;
-                          text-align: center;
-                          text-decoration: none;
-                          outline: none;
-                          color: #fff;
-                          background-color: #d1d100;
-                          border: none;
-                          border-radius: 15px;
-                          box-shadow: 10px 5px 5px black;"
-                         href="evento/?id={{ evento.id }}">Editar</a>
-                     <a onclick="del()"
-                        style="color:#e7281a;display: inline-block;
-                          padding: 5px 5px;
-                          width: 80px;
-                          font-size: 15px;
-                          cursor: pointer;
-                          text-align: center;
-                          text-decoration: none;
-                          outline: none;
-                          color: #fff;
-                          background-color: #FF0000;
-                          border: none;
-                          border-radius: 15px;
-                          box-shadow: 10px 5px 5px black;"
-                         href="evento/delete/{{ evento.id }}">Excluir</a>
+                            {{ evento.titulo }} - {{ evento.get_data_evento }}
+                          <a style="color:#cece16;display: inline-block;
+                              padding: 5px 5px;
+                              width: 80px;
+                              font-size: 15px;
+                              cursor: pointer;
+                              text-align: center;
+                              text-decoration: none;
+                              outline: none;
+                              color: #fff;
+                              background-color: #d1d100;
+                              border: none;
+                              border-radius: 15px;
+                              box-shadow: 10px 5px 5px black;"
+                             href="evento/?id={{ evento.id }}">Editar
+                          </a>
+                         <a onclick="del()"
+                            style="color:#e7281a;display: inline-block;
+                              padding: 5px 5px;
+                              width: 80px;
+                              font-size: 15px;
+                              cursor: pointer;
+                              text-align: center;
+                              text-decoration: none;
+                              outline: none;
+                              color: #fff;
+                              background-color: #FF0000;
+                              border: none;
+                              border-radius: 15px;
+                              box-shadow: 10px 5px 5px black;"
+                             href="evento/delete/{{ evento.id }}">Excluir
+                         </a>
                 </div>
             </li>
         {% endfor %}
