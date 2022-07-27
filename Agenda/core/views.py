@@ -14,7 +14,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('/')
+    return redirect('home')
 
 def submit_login(request):
     if request.POST:
@@ -32,8 +32,7 @@ def submit_login(request):
 def lista_eventos(request):
     usuario = request.user
     data_atual = datetime.now() - timedelta(hours=1)
-    evento = Evento.objects.filter(usuario=usuario,
-                                   data_evento__gt=data_atual)
+    evento = Evento.objects.filter(usuario=usuario)
     dados = {'eventos': evento}
     return render(request, 'agenda.html', dados)
 
@@ -116,3 +115,11 @@ def submit_cadastro(request):
         else:
             messages.error(request, "Necessário que seja informado um usuário e senha para o cadastro.")
     return redirect('/')
+
+@login_required(login_url='/login/')
+def visualizar(request, id_evento):
+    id_evento = request.GET.get('id')
+    dados = {}
+    if id_evento:
+        dados['evento'] = Evento.objects.get(id=id_evento)
+    return render(request, 'visualizar.html', dados)

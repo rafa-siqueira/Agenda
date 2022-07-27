@@ -3,10 +3,10 @@
 {% block content %}
 <div align="center">
     <h2 style=" font-family:courier;
-                font-size:30px;
-                color:white;
-                font-weight;
-                text-transform: uppercase;">Evento</h2>
+            font-size:30px;
+            color:white;
+            font-weight;
+            text-transform: uppercase;">Evento</h2>
 
     <form action="submit" method="POST">{% csrf_token %}
         <label style="  color: #ffffff;
@@ -16,14 +16,18 @@
         </label>
         <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
         <br>
-        <input style=" color:white;
+        <input readonly
+               style=" color:white;
                                 padding: 5px;
                                 width: 300px;
                                 border-radius:10px;
                                 border-style: solid;
                                 border-width: 2px;
                                 background-color:gray;"
-               type="text" name="titulo" size="20" value="{{ evento.titulo }}">
+               type="text"
+               name="titulo"
+               size="20"
+               value="{{ evento.titulo }}">
         <br><br><br>
         <label style="  color: #ffffff;
                         font-weight: bold;
@@ -31,14 +35,17 @@
                         float: center;">Data do Evento
         </label>
         <br>
-        <input style=" color:white;
+        <input  readonly
+                style=" color:white;
                                 padding: 5px;
                                 width: 300px;
                                 border-radius:10px;
                                 border-style: solid;
                                 border-width: 2px;
                                 background-color:gray;"
-               type="datetime-local" name="data_evento" value="{{ evento.get_data_input_evento }}">
+                type="datetime-local"
+                name="data_evento"
+                value="{{ evento.get_data_input_evento }}">
         <br><br><br>
         <label style=" color: #ffffff;
                         font-weight: bold;
@@ -46,14 +53,17 @@
                         float: center;">Local
         </label>
         <br>
-        <input style="color:white;
+        <input  readonly
+                style="color:white;
                                 padding: 5px;
                                 width: 300px;
                                 border-radius:10px;
                                 border-style: solid;
                                 border-width: 2px;
                                 background-color:gray;"
-               type="text" name='local' value="{{ evento.local }}">
+               type="text"
+               name='local'
+               value="{{ evento.local }}">
         <br><br><br>
         <label style=" color: #ffffff;
                         font-weight: bold;
@@ -61,33 +71,19 @@
                         float: center;">Descrição
         </label>
         <br>
-        <textarea style="color:white;
+        <textarea readonly
+                  style="color:white;
                                 padding: 5px;
                                 width: 300px;
                                 border-radius:10px;
                                 border-style: solid;
                                 border-width: 2px;
                                 background-color:gray;"
-                  name="descricao" rows="5" cols="21">{{ evento.descricao }}
-
+                  name="descricao"
+                  rows="5"
+                  cols="21">{{ evento.descricao }}
         </textarea>
         <br><br>
-        <button onclick="save()"
-                style="display: inline-block;
-                              padding: 5px 5px;
-                              width: 80px;
-                              font-size: 15px;
-                              cursor: pointer;
-                              text-align: center;
-                              text-decoration: none;
-                              outline: none;
-                              color: #fff;
-                              background-color: #4CAF50;
-                              border: none;
-                              border-radius: 15px;
-                              box-shadow: 10px 5px 5px black;"
-                type="submit">Salvar
-        </button>
         <a href="/">
         <button style="display: inline-block;
                               padding: 5px 5px;
@@ -102,7 +98,7 @@
                               border: none;
                               border-radius: 15px;
                               box-shadow: 10px 5px 5px black;"
-                    type="button">Cancelar
+                    type="button">Voltar
         </button>
         </a>
     </form>

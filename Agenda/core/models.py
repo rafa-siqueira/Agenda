@@ -26,3 +26,6 @@ class Evento(models.Model):
     def get_evento_atrasado(self):
         if self.data_evento < datetime.now():
             return True
+
+# class Usuario(models.Model):
+#     nome = models.CharField(max_length=100)

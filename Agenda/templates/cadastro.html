@@ -10,7 +10,7 @@
                  background-color: rgb(2, 119, 189);
                  border-radius: 5px;"
          align="center">
-        <a onclick="logof()" style="display: inline-block;
+        <a onclick="logoff()" style="display: inline-block;
                           padding: 15px 15px;
                           width: 80px;
                           font-size: 15px;
@@ -28,71 +28,73 @@
 </div>
 <br><br>
 <body>
-<form action="submit" method="POST">{% csrf_token %}
-    <label style=" color: #ffffff;
-                    font-weight: bold;
-                    width: 130px;
-                    float: center;">Usuário:
-    </label>
-     <br>
-    <input style=" color:white;
-                    padding: 5px;
-                    width: 300px;
-                    border-radius:10px;
-                    border-style: solid;
-                    border-width: 2px;
-                    background-color:gray;"
-           name="username">
+<div align="center">
+    <form action="submit" method="POST">{% csrf_token %}
+        <label style=" color: #ffffff;
+                        font-weight: bold;
+                        width: 130px;
+                        float: center;">Usuário:
+        </label>
+         <br>
+        <input style=" color:white;
+                        padding: 5px;
+                        width: 300px;
+                        border-radius:10px;
+                        border-style: solid;
+                        border-width: 2px;
+                        background-color:gray;"
+               name="username">
 
-    <br><br>
-    <label style=" color: #ffffff;
-                    font-weight: bold;
-                    width: 130px;
-                    float: center;">Senha:
-    </label>
-     <br>
-    <input type="password"
-           style=" color:white;
-                    padding: 5px;
-                    width: 300px;
-                    border-radius:10px;
-                    border-style: solid;
-                    border-width: 2px;
-                    background-color:gray;"
-           name="password">
-    <br><br>
-    <label style=" color: #ffffff;
-                    font-weight: bold;
-                    width: 130px;
-                    float: center;">Confirmar senha:
-    </label>
-    <br>
-    <input type="password"
-           style=" color:white;
-                    padding: 5px;
-                    width: 300px;
-                    border-radius:10px;
-                    border-style: solid;
-                    border-width: 2px;
-                    background-color:gray;"
-           name="confirmasenha">
-    <br><br>
-    <button onclick="save()"
-            style="display: inline-block;
-                          padding: 5px 5px;
-                          width: 80px;
-                          font-size: 15px;
-                          cursor: pointer;
-                          text-align: center;
-                          text-decoration: none;
-                          outline: none;
-                          color: #fff;
-                          background-color: #4CAF50;
-                          border: none;
-                          border-radius: 15px;
-                          box-shadow: 10px 5px 5px black;"
-                type="submit">Cadastrar
-    </button>
-</form>
+        <br><br>
+        <label style=" color: #ffffff;
+                        font-weight: bold;
+                        width: 130px;
+                        float: center;">Senha:
+        </label>
+         <br>
+        <input type="password"
+               style=" color:white;
+                        padding: 5px;
+                        width: 300px;
+                        border-radius:10px;
+                        border-style: solid;
+                        border-width: 2px;
+                        background-color:gray;"
+               name="password">
+        <br><br>
+        <label style=" color: #ffffff;
+                        font-weight: bold;
+                        width: 130px;
+                        float: center;">Confirmar senha:
+        </label>
+        <br>
+        <input type="password"
+               style=" color:white;
+                        padding: 5px;
+                        width: 300px;
+                        border-radius:10px;
+                        border-style: solid;
+                        border-width: 2px;
+                        background-color:gray;"
+               name="confirmasenha">
+        <br><br>
+        <button onclick="save()"
+                style="display: inline-block;
+                              padding: 5px 5px;
+                              width: 80px;
+                              font-size: 15px;
+                              cursor: pointer;
+                              text-align: center;
+                              text-decoration: none;
+                              outline: none;
+                              color: #fff;
+                              background-color: #4CAF50;
+                              border: none;
+                              border-radius: 15px;
+                              box-shadow: 10px 5px 5px black;"
+                    type="submit">Cadastrar
+        </button>
+    </form>
+</div>
 </body>
 </html>

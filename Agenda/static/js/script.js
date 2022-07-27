@@ -1,4 +1,4 @@
-function logof(){
+function logoff(){
     alert("Realizando logoff.")
 }
 
@@ -9,4 +9,8 @@ function save(){
 function del(){
 
     alert("Exclusão do evento com sucesso.")
+}
+
+function visualizar(){
+    alert("Clique em ok para visualizar o evento.")
 }
