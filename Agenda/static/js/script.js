@@ -1,5 +1,5 @@
 function logoff(){
-    alert("Realizando logoff.")
+    alert("Logoff.")
 }
 
 function save(){
@@ -7,7 +7,6 @@ function save(){
 }
 
 function del(){
-
     alert("Exclusão do evento com sucesso.")
 }
 

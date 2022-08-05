@@ -92,8 +92,27 @@
                               border: none;
                               border-radius: 15px;
                               box-shadow: 10px 5px 5px black;"
-                    type="submit">Cadastrar
+                type="submit">Cadastrar
         </button>
+        <br><br>
+        {% for message in messages %}
+        <div align="center">
+            <strong style="font-family:courier; font-size:20px;
+                          display: inline-block;
+                          padding: 5px 5px;
+                          width: 330px;
+                          font-size: 15px;
+                          text-align: center;
+                          text-decoration: none;
+                          outline: none;
+                          color: #fff;
+                          background-color: brown;
+                          border-radius: 15px;
+                          box-shadow: 10px 5px 5px black;"
+            >Erro: {{ message }} </strong>
+            <br><br>
+         </div>
+        {% endfor %}
     </form>
 </div>
 </body>

@@ -27,5 +27,12 @@ class Evento(models.Model):
         if self.data_evento < datetime.now():
             return True
 
-# class Usuario(models.Model):
-#     nome = models.CharField(max_length=100)
+class usuarios(models.Model):
+    nome = models.CharField(max_length=100)
+    senha = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = 'usuarios'
+
+    def __str__(self):
+        return self.nome

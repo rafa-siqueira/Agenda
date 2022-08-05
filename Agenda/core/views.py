@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from core.models import Evento
+from core.models import Evento, usuarios
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
@@ -16,13 +16,25 @@ def logout_user(request):
     logout(request)
     return redirect('home')
 
+# def submit_login(request):
+#     if request.POST:
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         usuario = authenticate(username=username, password=password)
+#         if usuario is not None:
+#             login(request, usuario)
+#             return redirect('/')
+#         else:
+#             messages.error(request, "Usuário ou senha invalido")
+#     return redirect('/')
+
 def submit_login(request):
     if request.POST:
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        usuario = authenticate(username=username, password=password)
+        nome = request.POST.get('username')
+        senha = request.POST.get('password')
+        usuario = authenticate(username=nome, password=senha)
         if usuario is not None:
-            login(request, usuario)
+            login(request, usuarios)
             return redirect('/')
         else:
             messages.error(request, "Usuário ou senha invalido")
@@ -102,18 +114,17 @@ def cadastro(request):
 def submit_cadastro(request):
     if request.POST:
         username = request.POST.get('username')
-        password = request.POST.get('password')
         if username:
             usuario = User.objects.get(username=username)
             if usuario.username == username:
                 messages.error(request, "Usuário já existente, tente outro usuário.")
+                return redirect('/agenda/cadastro')
             else:
                 usuario.username = username
-                usuario.password = password
                 usuario.save()
-                print(usuario.username)
         else:
             messages.error(request, "Necessário que seja informado um usuário e senha para o cadastro.")
+            return redirect('/agenda/cadastro')
     return redirect('/')
 
 @login_required(login_url='/login/')
